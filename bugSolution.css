@@ -1,0 +1,17 @@
+The solution to this issue is to avoid using `!important` whenever possible and to properly manage CSS specificity.  Here's how the CSS can be rewritten to avoid the unexpected behavior:
+
+```css
+.parent {
+  color: blue;
+}
+
+.child {
+  color: red;
+}
+
+.parent .child {
+  color: green;
+}
+```
+
+By removing the `!important` declaration from the `.child` selector, the expected behavior is restored, and the text will now correctly display as green because the more specific selector `.parent .child` takes precedence.
